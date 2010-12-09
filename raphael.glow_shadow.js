@@ -17,6 +17,7 @@ Raphael.el.glow = function(size, color, opacity) {
       case 'rect': new_element = this.paper.rect(this.attr('x') - size + i, this.attr('y') - size + i, this.attr('width') + (size * 2) - (i * 2), this.attr('height') + (size * 2) - (i * 2), this.attr('r') + size - i); break;
       case 'circle': new_element = this.paper.circle(this.attr('cx'), this.attr('cy'), this.attr('r') + size - i); break;
       case 'ellipse': new_element = this.paper.ellipse(this.attr('cx'), this.attr('cy'), this.attr('rx') + size - i, this.attr('ry') + size - i); break;
+      default: throw "Glow and Shadow does not support the " + this.type + " Raphael element!"; break;
     }
     this.glowSet.push(new_element.attr({
       opacity : opacity - ((size - i) * ((opacity - .1) / size))
@@ -78,6 +79,7 @@ Raphael.el.shadow = function (x_offset, y_offset, size, color) {
         this.paper.ellipse(left + x_offset, top + y_offset, size + radius_x, size + radius_y).attr({stroke: 'none', fill: radialGradient, opacity: 0})
       );
       break;
+    default: throw "Glow and Shadow does not support the " + this.type + " Raphael element!"; break;
   }
   this.onAnimation(function() {
     this.shadow(x_offset, y_offset, size, color);
