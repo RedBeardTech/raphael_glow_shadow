@@ -32,11 +32,19 @@ These methods are attached to Raphaël elements and are called like so:
 
 Note: Glow and Shadow only supports the _rect_, _circle_, and _ellipse_ elements of Raphaël. Trying to use it on other elements (like path) will raise an error.
 
+## Running the Tests
+
+  * Change directories so you are sitting in the _tests_ folder.
+  * Run `java -jar JsTestDriver.jar --port 9876`
+  * Capture your favorite browser by going to _http://localhost:9876/capture_ in the browser.
+  * Run the test by running `java -jar JsTestDriver.jar --tests all`
+
 ## Note on Patches/Pull Requests
  
   * Fork the project.
   * Make your feature addition or bug fix.
   * Commit.
+  * Add tests if applicable. That way we won't break anything.
   * Send me a pull request.
   
 ## Copyright
